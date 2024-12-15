@@ -14,7 +14,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, onClickLike }) => {
         </p>
         <button 
           onClick={() => {
-            console.log(`button clicked for ID: ${id}`);
+            // console.log(`button clicked for ID: ${id}`);
             onClickLike(id);
           }} 
           className="like">

@@ -1,7 +1,6 @@
 import './App.css';
 // import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
-import TimeStamp from './components/TimeStamp';
 import messages from './data/messages.json';
 import { useState } from 'react';
 
@@ -11,8 +10,8 @@ const App = () => {
   const clickOnLike = (id) => {
     setEntries (entries => entries.map((entry) => {
       if (entry.id === id) {
-        console.log(`Like for entry ID: ${entry.id}, liked: ${entry.liked}`);
-        console.log({ ...entry, liked: !entry.liked });
+        // console.log(`Like for entry ID: ${entry.id}, liked: ${entry.liked}`);
+        // console.log({ ...entry, liked: !entry.liked });
         return { ...entry, liked: !entry.liked };
       } else {
         return entry;
@@ -21,7 +20,7 @@ const App = () => {
   };
 
   const totalLikes = entries.filter((entry) => entry.liked).length;
-  console.log(`Counting likes: ${totalLikes}`);
+  // console.log(`Counting likes: ${totalLikes}`);
   return (
     <div id="App">
       <header>
@@ -31,6 +30,8 @@ const App = () => {
         </section>
       </header>
       <main>
+        {/* Wave 02: Render ChatLog component */}
+        <ChatLog entries={entries} onClickLike={clickOnLike} />
         {/* Wave 01: Render one ChatEntry component*/}
         {/* <ChatEntry
           id={messages[0].id}
@@ -39,9 +40,6 @@ const App = () => {
           timeStamp={messages[0].timeStamp}
           liked={messages[0].liked}
         /> */}
-
-        {/* Wave 02: Render ChatLog component */}
-        <ChatLog entries={entries} onClickLike={clickOnLike} />
       </main>
     </div>
   );
