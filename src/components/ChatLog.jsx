@@ -3,9 +3,9 @@ import Proptypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 
-const ChatLog = ({ entries, onClickLike }) => {
+const ChatLog = ({ entries, color, onClickLike }) => {
   return (
-    <div>
+    <div className='chat-log'>
       {entries.map((entry) => (
         <ChatEntry
           id={entry.id}
@@ -14,6 +14,8 @@ const ChatLog = ({ entries, onClickLike }) => {
           body={entry.body}
           timeStamp={entry.timeStamp}
           liked={entry.liked}
+          isLocal={entry.isLocal}
+          color={color[entry.sender]}
           onClickLike={onClickLike}
         />
       ))}
@@ -29,8 +31,10 @@ ChatLog.propTypes = {
       body: Proptypes.string.isRequired,
       timeStamp: Proptypes.string.isRequired,
       liked: Proptypes.bool.isRequired,
+      isLocal: Proptypes.bool.isRequired,
     })
   ).isRequired,
+  color: Proptypes.object.isRequired,
   onClickLike: Proptypes.func.isRequired,
 };
 

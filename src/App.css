@@ -3,7 +3,7 @@
 }
 
 #App header {
-  background-color: #222;
+  background-color: #2a2929;
   color: #fff;
   padding-bottom: 0.5rem;
   position: fixed;
@@ -27,7 +27,7 @@
 }
 
 #App header section {
-  background-color: #e0ffff;
+  background-color: rgb(80, 197, 252);
 }
 
 #App .widget {
@@ -48,27 +48,54 @@
 #App span {
   display: inline-block
 }
+.widget {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: red;
+}
+.color-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-color: #222;
+}
 
+.color-dot-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.color-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
 .red {
-  color: #b22222
+  background-color: #b22222
 }
 
 .orange {
-  color: #e6ac00
+  background-color: #e6ac00
 }
 
 .yellow {
-  color: #e6e600
+  background-color: #e6e600
 }
 
 .green {
-  color: green
+  background-color: green
 }
 
 .blue {
-  color: blue
+  background-color: blue
 }
 
 .purple {
-  color: purple
+  background-color: purple
 }

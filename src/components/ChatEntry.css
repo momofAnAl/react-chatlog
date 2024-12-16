@@ -9,7 +9,12 @@ button {
 }
 
 .chat-entry {
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 300px;
 }
 
 .chat-entry:last-child {
@@ -48,7 +53,6 @@ button {
   height: 22px;
   width: 44px;
   clip-path: polygon(100% 0, 0 0, 50% 100%);
-
   position: absolute;
   top: 0;
 }
@@ -56,6 +60,7 @@ button {
 /* "local" messages are shown on the left side */
 .chat-entry.local {
   text-align: left;
+  align-self: flex-start;
 }
 
 .chat-entry.local .entry-time {
@@ -74,6 +79,7 @@ button {
 /* "remote" messages are shown on the right side, in blue */
 .chat-entry.remote {
   text-align: right;
+  align-self: flex-end;
 }
 
 .chat-entry.remote .entry-bubble {
@@ -97,8 +103,4 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
-}
-
-.like {
-
 }
