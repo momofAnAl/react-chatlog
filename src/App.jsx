@@ -4,6 +4,7 @@ import messages from './data/messages.json';
 import { useState } from 'react';
 import ColorChoice from './components/ColorChoice';
 
+//ancestor/parent component
 const App = () => {
   const localSender = 'Vladimir';
 
@@ -13,19 +14,7 @@ const App = () => {
     }))
   );
 
-  const [colors, setColors] = useState({
-    Vladimir: '#00ff00',
-    Estragon: '#0000ff',
-  });
-
   const senders = [...new Set(entries.map((msg) => msg.sender))];
-
-  const handleColorChange = (sender, color) => {
-    setColors((colors) => ({
-      ...colors, [sender]: color,
-    }));
-  };
-
   const clickOnLike = (id) => {
     setEntries(entries => entries.map((entry) => {
       if (entry.id === id) {
@@ -40,6 +29,19 @@ const App = () => {
 
   const totalLikes = entries.filter((entry) => entry.liked).length;
   // console.log(`Counting likes: ${totalLikes}`);
+
+  const [colors, setColors] = useState({
+    Vladimir: '#00ff00',
+    Estragon: '#0000ff',
+  });
+
+  const handleColorChange = (sender, color) => {
+    setColors((colors) => ({
+      ...colors, [sender]: color,
+    }));
+  };
+
+
   return (
     <div id="App">
       <header>
